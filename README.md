@@ -2,6 +2,14 @@
 
 ## Getting started
 
+### Setting Environment Variables
+
+Create .env file and set environment variables
+
+```.env
+OPENAI_API_KEY = "***api key***"
+```
+
 ### Building a virtual environment
 
 ```
