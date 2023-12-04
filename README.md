@@ -29,7 +29,7 @@ mtg-notes/
 .envファイルを作成し、環境変数を設定する
 
 ```.env
-OPENAI_API_KEY = "***api key***"
+OPENAI_API_KEY = "sk-******"
 ```
 
 ### 2. 仮想環境の構築
@@ -61,3 +61,7 @@ $ source ~/venv/bin/activate
 ```
 $ python3 src/main.py move/hoge.mp4
 ```
+
+## メモ
+
+9分ほどの動画で 「$0.05 のクレジットの消費」「1分ほどでプログラムが完了」
