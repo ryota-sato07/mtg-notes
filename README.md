@@ -1,16 +1,38 @@
 # mtg-notes
 
-## Getting started
+## ディレクトリ構成
 
-### Setting Environment Variables
+これがアプリケーションの一般的なフォルダー構造になります。
 
-Create .env file and set environment variables
+```
+mtg-notes/
+│
+├── main.py 
+├── audio_converter.py
+├── audio_splitter.py
+│
+└── utils/
+    ├── file_utils.py
+    └── openai_utils.py
+```
+
+- **main.py**: アプリケーションの主要な処理フローを管理し、他のモジュールを統合します。
+- **audio_converter.py**: MP4ファイルをMP3ファイルに変換する機能を担当します。
+- **audio_splitter.py**: 長いMP3ファイルを小さな区間に分割する機能を提供します。
+- **utils/file_utils.py**: テキストデータをファイルに保存する基本的な機能を提供します。
+- **utils/openai_utils.py**: OpenAI APIを使用して音声の文字起こしとテキストの要約を行う機能を担当します。
+
+## はじめる 
+
+### 1. 環境変数の設定 
+
+.envファイルを作成し、環境変数を設定する
 
 ```.env
 OPENAI_API_KEY = "***api key***"
 ```
 
-### Building a virtual environment
+### 2. 仮想環境の構築
 
 ```
 $ python3 -m venv ~/venv
@@ -18,11 +40,11 @@ $ source ~/venv/bin/activate
 (venv)$
 ```
 
-After executing the above command, configure the following settings for VSCode.
+上記のコマンドを実行した後、VSCodeに対して以下の設定を行う。
 
-1. Installing [Python Extensions](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-2. Set the path for the virtual environment venv in [VSCode Setting > venv > Python: Venv Path]
-3. Installation of each module
+1. [Python拡張機能](https://marketplace.visualstudio.com/items?itemName=ms-python.python)のインストール
+2. VSCode Setting > venv > Python: Venv Path]で仮想環境venvのパスを設定する。
+3. 各モジュールのインストール
 
 ```
 (venv)$ pip install openai==0.28.1
@@ -32,10 +54,10 @@ After executing the above command, configure the following settings for VSCode.
 (venv)$ pip install python-dotenv
 ```
 
-### Execution of commands
+### 3. コマンドの実行
 
-Run the application as `python3 [file path to execute] [Video file path to create minutes]` as follows.
+以下のように`python3 [実行するファイルパス] [議事録を作成する動画ファイルパス]`としてアプリケーションを実行する。
 
 ```
-$ python3 mp4_to_minutes.py move/hoge.mp4
+$ python3 src/main.py move/hoge.mp4
 ```
