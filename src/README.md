@@ -2,6 +2,9 @@
 
 ## main.py
 
+- .env ファイルを読み込んで、取得した API key を変数にセットする
+- hoge
+
 ```python
 ```
 
