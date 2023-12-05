@@ -30,7 +30,7 @@ mtg-notes/
 ```
 
 | ファイル名 | 役割 |
-| :--      | :--: |
+| :--      | :-- |
 | [**main.py**]()               | アプリケーションの主要な処理フローを管理し、他のモジュールを統合する |
 | [**audio_converter.py**]()    | MP4ファイルをMP3ファイルに変換する |
 | [**audio_splitter.py**]()     | 長いMP3ファイルを小さな区間に分割する |
@@ -39,14 +39,19 @@ mtg-notes/
 
 ## はじめる 
 
-### 1. プロジェクトクローン 
+### 1. openai の API の利用設定
+
+API を利用するために、openai にログインして [クレジットの追加](https://platform.openai.com/usage) と [API Key](https://platform.openai.com/api-keys) の登録が必要です。
+登録方法は、別サイトを参照してください。
+
+### 2. プロジェクトのクローン 
 
 ```
 $ git clone git@github.com:ryota-sato07/mtg-notes.git 
 $ cd mtg-note 
 ```
 
-### 1. 環境変数の設定 
+### 3. 環境変数の設定 
 
 ルートディレクトリ直下に `.env` ファイルを作成し、環境変数を設定する
 
@@ -54,7 +59,9 @@ $ cd mtg-note
 OPENAI_API_KEY = "sk-******"
 ```
 
-### 2. 仮想環境の構築
+### 4. 仮想環境の構築
+
+下記コマンドで仮想環境を立ち上げる。
 
 ```
 $ python3 -m venv ~/venv
@@ -62,9 +69,9 @@ $ source ~/venv/bin/activate
 (venv)$
 ```
 
-上記のコマンドを実行した後、VSCodeに対して以下の設定を行う。
+その後、 VSCode に対して以下の設定を行う。
 
-1. [Python拡張機能](https://marketplace.visualstudio.com/items?itemName=ms-python.python)のインストール
+1. [Python拡張機能](https://marketplace.visualstudio.com/items?itemName=ms-python.python) のインストール
 2. [VSCode Setting > venv > Python: Venv Path] で仮想環境 venv のパスを設定する。
 3. 以下モジュールのインストール
 
@@ -76,12 +83,21 @@ $ source ~/venv/bin/activate
 (venv)$ pip install python-dotenv
 ```
 
-### 3. コマンドの実行
+### 5. コマンドの実行
 
-以下のように`python3 [実行するファイルパス] [議事録を作成する動画ファイルパス]`としてアプリケーションを実行する。
+ルートディレクトリ配下の `/move` ディレクトリに mp4 形式のファイルを保存する。
+その後、以下のように`python3 [実行するファイルパス] [議事録を作成する動画ファイルパス]`としてアプリケーションを実行する。
 
 ```
 $ python3 src/main.py move/hoge.mp4
+```
+
+### 6. 仮想環境の無効化
+
+下記コマンドで仮想環境を抜ける。
+
+```
+$ deactivate
 ```
 
 ## 検証メモ
