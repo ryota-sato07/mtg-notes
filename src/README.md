@@ -1,6 +1,6 @@
 # 実装詳細
 
-## main.py
+## □ main.py
 
 ### Python ライブラリでの事前準備
 
@@ -16,31 +16,33 @@
   - 詳細は audio_converter.py
 - 生成したディレクトリ配下に、mp3 を 8分ごとに分割したファイルを配置
   - 詳細は audio_splitter.py
-- OpenAPI Key を設定
 
 ### OpenAPI との接続
 
-- トランスクリプション？？？
+- OpenAPI Key を設定
+- 分割した mp3 ファイルから、それぞれ文字起こしを行い、それらを結合して変数に格納する
+  - 詳細は utils/openai_utils.py
+- 結合したテキストを、定義したプロンプトをもとに ChatGPT で要約
+  - 詳細は utils/openai_utils.py
+- 生成したディレクトリに議事録を保存
+  - 詳細は utils/file_utils.py
+- スクリプトが直接実行された場合にのみmain関数を呼び出す
+
+## □ audio_converter.py
+
+- 
+
+## □ audio_splitter.py
 
 ```python
 ```
 
-## audio_converter.py
+## □ utils/file_utils.py
 
 ```python
 ```
 
-## audio_splitter.py
-
-```python
-```
-
-## utils/file_utils.py
-
-```python
-```
-
-## utils/openai_utils.py 
+## □ utils/openai_utils.py 
 
 ```python
 ```
