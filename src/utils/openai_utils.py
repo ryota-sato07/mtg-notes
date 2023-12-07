@@ -1,13 +1,16 @@
 import openai
 
+# OpenAI の API Key を設定
 def set_openai_key(api_key):
     openai.api_key = api_key
 
+# Whisper で音声からテキストを書き起こす
 def transcribe_with_openai(audio_file_path):
     with open(audio_file_path, 'rb') as audio_file:
         transcription = openai.Audio.transcribe("whisper-1", audio_file)
     return transcription.text
 
+# 文字起こしをプロンプトを元に ChatGPT を実行する
 def summarize_with_openai(transcription_part):
     prompt = """
     あなたは、プロの議事録作成者です。

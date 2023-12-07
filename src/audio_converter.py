@@ -2,6 +2,7 @@ import moviepy.editor as mp
 import os
 from datetime import datetime
 
+# mp4 から mp3 ファイルを書き出す
 def convert_mp4_to_mp3(mp4_file_path, output_folder):
     # 現在の日時をyyyyMMdd-hhmmss形式で取得
     current_datetime = datetime.now().strftime("%Y%m%d-%H%M%S")

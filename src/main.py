@@ -7,6 +7,7 @@ from audio_splitter import split_audio
 from utils.file_utils import save_text_to_file
 from utils.openai_utils import set_openai_key, transcribe_with_openai, summarize_with_openai
 
+# アプリケーションの実行関数
 def main():
     # 環境変数をロードし、APIキーを取得
     load_dotenv()

@@ -1,6 +1,7 @@
 from pydub import AudioSegment
 import os
 
+# 指定間隔で mp3 ファイルを分割し、指定パスにそれぞれ書き出す
 def split_audio(mp3_file_path, interval_ms, output_folder):
     audio = AudioSegment.from_file(mp3_file_path)
     file_name, ext = os.path.splitext(os.path.basename(mp3_file_path))
