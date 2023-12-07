@@ -1,11 +1,13 @@
 import sys
 import os
 from dotenv import load_dotenv
+
 from audio_converter import convert_mp4_to_mp3
 from audio_splitter import split_audio
 from utils.file_utils import save_text_to_file
 from utils.openai_utils import set_openai_key, transcribe_with_openai, summarize_with_openai
 
+# アプリケーションの実行関数
 def main():
     # 環境変数をロードし、APIキーを取得
     load_dotenv()
@@ -16,6 +18,7 @@ def main():
         print("MP4ファイルのパスを引数として指定してください。")
         sys.exit(1)
 
+    # 変数定義（動画のファイルパス・出力先のパス・動画ファイルの分割間隔）
     mp4_file_path = sys.argv[1]
     output_folder = "./output/"
     interval_ms = 480_000  # 8分

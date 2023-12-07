@@ -31,11 +31,11 @@ mtg-notes/
 
 | ファイル名 | 役割 |
 | :--      | :-- |
-| [**main.py**]()               | アプリケーションの主要な処理フローを管理し、他のモジュールを統合する |
-| [**audio_converter.py**]()    | MP4ファイルをMP3ファイルに変換する |
-| [**audio_splitter.py**]()     | 長いMP3ファイルを小さな区間に分割する |
-| [**utils/file_utils.py**]()   | テキストデータをファイルに保存する |
-| [**utils/openai_utils.py**]() | OpenAI APIを使用して音声の文字起こしとテキストの要約を行う |
+| [**main.py**](https://github.com/ryota-sato07/mtg-notes/tree/main/src#mainpy)               | アプリケーションの主要な処理フローを管理し、他のモジュールを統合する |
+| [**audio_converter.py**](https://github.com/ryota-sato07/mtg-notes/tree/main/src#audio_converterpy)    | MP4ファイルをMP3ファイルに変換する |
+| [**audio_splitter.py**](https://github.com/ryota-sato07/mtg-notes/tree/main/src#audio_splitterpy)     | 長いMP3ファイルを小さな区間に分割する |
+| [**utils/file_utils.py**](https://github.com/ryota-sato07/mtg-notes/tree/main/src#utilsfile_utilspy)   | テキストデータをファイルに保存する |
+| [**utils/openai_utils.py**](https://github.com/ryota-sato07/mtg-notes/tree/main/src#utilsopenai_utilspy) | OpenAI APIを使用して音声の文字起こしとテキストの要約を行う |
 
 ## はじめる 
 
@@ -86,12 +86,12 @@ $ source ~/venv/bin/activate
 
 ### 5. コマンドの実行
 
-ルートディレクトリ配下の `/move` ディレクトリに mp4 形式のファイルを保存する。
+ルートディレクトリ配下の `/public/move` ディレクトリに mp4 形式のファイルを保存する。
 
 その後、以下のように`python3 [実行するファイルパス] [議事録を作成する動画ファイルパス]`としてアプリケーションを実行する。
 
 ```
-$ python3 src/main.py move/hoge.mp4
+$ python3 src/main.py public/move/test_move.mp4
 ```
 
 ### 6. 仮想環境の無効化
