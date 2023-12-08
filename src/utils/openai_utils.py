@@ -1,13 +1,22 @@
-import openai
+import os
+from dotenv import load_dotenv
+from openai import OpenAI
 
-# OpenAI の API Key を設定
-def set_openai_key(api_key):
-    openai.api_key = api_key
+# 環境変数をロードし、APIキーを取得
+load_dotenv()
+openai_api_key = os.getenv("OPENAI_API_KEY")
+client = OpenAI(
+    api_key = openai_api_key 
+)
+
+openai_audio = OpenAI()
 
 # Whisper で音声からテキストを書き起こす
 def transcribe_with_openai(audio_file_path):
-    with open(audio_file_path, 'rb') as audio_file:
-        transcription = openai.Audio.transcribe("whisper-1", audio_file)
+    # with open(audio_file_path, 'rb') as audio_file:
+    #     audio_data = audio_file.read()
+
+    transcription = openai_audio.transcriptions.create(model="whisper-1", file=audio_file_path)
     return transcription.text
 
 # 文字起こしをプロンプトを元に ChatGPT を実行する
@@ -33,11 +42,13 @@ def summarize_with_openai(transcription_part):
 
     # 内容
     """ + transcription_part
-    response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
+    response = client.chat.completions.create(
         messages=[
-            {'role': 'user', 'content': prompt}
+        {
+            "role": "user",
+            "content": prompt,
+        }
         ],
-        temperature=0.0,
+        model="gpt-3.5-turbo",
     )
-    return response['choices'][0]['message']['content']
+    return response.choices[0].message.content
