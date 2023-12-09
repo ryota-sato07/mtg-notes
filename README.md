@@ -8,8 +8,8 @@ mp4 から txt 形式で議事録を出力するアプリケーション
 | :--   | :-- |
 | PC    | MacBook Air (InterlCore i7) |
 | MacOS | Ventura |
-| python | 3.11.6 | 
-| openai | 0.28.1 | 
+| python | 3.11.6 |
+| openai | 1.3.7 |
 
 <img width="211" alt="image" src="https://github.com/ryota-sato07/mtg-notes/assets/87516579/dcd05375-b580-4463-89da-2fd0d46ba74d">
 
@@ -104,7 +104,7 @@ $ deactivate
 
 ## 検証メモ
 
-目安として、9分10秒の動画で 「$0.06 のクレジットの消費」「1分46秒でプログラムが完了」の結果となった。
+目安として、9分10秒の動画で 「$0.05 のクレジットの消費」「2分01秒でプログラムが完了」の結果となった。
 
 （ネット環境によってプログラムの完了時間は前後します。）
 
