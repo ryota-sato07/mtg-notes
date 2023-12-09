@@ -1,18 +1,13 @@
 import sys
 import os
-from dotenv import load_dotenv
 
 from audio_converter import convert_mp4_to_mp3
 from audio_splitter import split_audio
 from utils.file_utils import save_text_to_file
-from utils.openai_utils import set_openai_key, transcribe_with_openai, summarize_with_openai
+from utils.openai_utils import transcribe_with_openai, summarize_with_openai
 
 # アプリケーションの実行関数
 def main():
-    # 環境変数をロードし、APIキーを取得
-    load_dotenv()
-    openai_api_key = os.getenv("OPENAI_API_KEY")
-
     # コマンドライン引数からMP4ファイルのパスを取得
     if len(sys.argv) < 2:
         print("MP4ファイルのパスを引数として指定してください。")
@@ -28,9 +23,6 @@ def main():
 
     # MP3ファイルを指定された時間間隔で分割
     mp3_file_path_list = split_audio(mp3_file_path, interval_ms, os.path.dirname(mp3_file_path))
-
-    # OpenAI APIキーを設定
-    set_openai_key(openai_api_key)
 
     # 分割された各MP3ファイルからトランスクリプションを生成し、結合
     combined_transcription = ""
