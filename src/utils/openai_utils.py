@@ -9,14 +9,10 @@ client = OpenAI(
     api_key = openai_api_key 
 )
 
-openai_audio = OpenAI()
-
 # Whisper で音声からテキストを書き起こす
 def transcribe_with_openai(audio_file_path):
-    # with open(audio_file_path, 'rb') as audio_file:
-    #     audio_data = audio_file.read()
-
-    transcription = openai_audio.transcriptions.create(model="whisper-1", file=audio_file_path)
+    with open(audio_file_path, 'rb') as audio_file:
+        transcription = client.audio.transcriptions.create(model="whisper-1", file=audio_file)
     return transcription.text
 
 # 文字起こしをプロンプトを元に ChatGPT を実行する
