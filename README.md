@@ -11,7 +11,8 @@ mp4 から txt 形式で議事録を出力するアプリケーション
 | python | 3.11.6 |
 | openai | 1.3.7 |
 
-<img width="211" alt="image" src="https://github.com/ryota-sato07/mtg-notes/assets/87516579/dcd05375-b580-4463-89da-2fd0d46ba74d">
+<img width="196" alt="image" src="https://github.com/ryota-sato07/mtg-notes/assets/87516579/a718c736-1e4e-4e3c-8652-feac2554bfba">
+
 
 ## ディレクトリ構成
 
