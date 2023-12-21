@@ -78,7 +78,7 @@ $ source ~/venv/bin/activate
 3. 以下モジュールのインストール
 
 ```
-(venv)$ pip install openai==0.28.1
+(venv)$ pip install openai==1.3.7
 (venv)$ pip install moviepy
 (venv)$ brew install ffmpeg
 (venv)$ pip install pydub
